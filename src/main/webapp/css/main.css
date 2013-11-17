@@ -11,3 +11,26 @@ div.fill{
     width: 100%;
 
 }
+
+
+#main_tabs { /* tabstrip element */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+}
+
+#main_tabs div{
+    height: 100%;
+    width: 100%;
+}
+.k-tabstrip .k-content {
+    position: absolute;
+    top: 41px;
+    bottom: 0;
+    width: auto;
+    height: auto;
+}
