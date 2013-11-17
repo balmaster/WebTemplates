@@ -20,23 +20,23 @@
 <!-- define templates for all the views -->
 
 <script id="kitteh-list-template" type="text/x-kendo-template">
-    <div data-role="listview" data-bind="source: imageSource" data-template="kitteh-list-item-template"></div>
+    <div data-role="listview" data-bind="source: imageSource, events: {change: imageClicked}" data-selectable="true" data-template="kitteh-list-item-template"></div>
 </script>
 
 <script id="kitteh-list-item-template" type="text/x-kendo-template">
-    <img data-bind="attr: {src: url}" height="100" width="150">
+    <img data-bind="attr: {src: url}" height="100" width="150" />
 </script>
 
 <script id="kitteh-view-template" type="text/x-keno-template">
     <h3 data-bind="text: name"></h3>
-    <img data-bind="attr: {src: url}">
+    <img data-bind="attr: {src: url}" />
 </script>
 
 <!-- a div to place everything in to the page -->
 <div id="main"></div>
     <script type="text/javascript">
         $(document).ready(function() {
-            // render a layout in to the "#main" element
+// render a layout in to the "#main" element
             var layout = new kendo.Layout("layout-template");
             layout.render("#main");
 
@@ -50,26 +50,36 @@
                 ],
 
                 schema: {
-                    model: { id: "id", fields: { url: "string" } }
+                    model: { id: "id", fields: { url: { type : "string" } } }
                 }
             });
 
             var kittehModel = kendo.observable({
-                imageSource: kittehSource
+                imageSource: kittehSource,
+
+                imageClicked: function(e){
+                    // get the selected image
+                    var index = e.sender.select().index();
+                    var image = this.imageSource.view()[index];
+                    // update the "kitteh" view model
+                    kitteh.set("name", image.get("name"));
+                    kitteh.set("url", image.get("url"));
+                }
             });
 
-            var kittehListView = new kendo.View("#kitteh-list-template", {
+            var kittehListView = new kendo.View("kitteh-list-template", {
                 model: kittehModel
             });
             layout.showIn("#kitteh-list", kittehListView);
 
 // render a single kitteh view in to the "#kitteh" element
+            var image = kittehSource.get(1)
             var kitteh = kendo.observable({
-                name: "Fuzzball",
-                url: "http://placekitten.com/300/200"
+                name: image.get("name"),
+                url: image.get("url")
             });
 
-            var kittehView = new kendo.Layout("kitteh-view-template", {
+            var kittehView = new kendo.View("kitteh-view-template", {
                 model: kitteh
             });
             layout.showIn("#kitteh", kittehView);
