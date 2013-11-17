@@ -1,7 +1,36 @@
 div.absolute {
-	position: absolute; 
-	top: 0px; 
-	left: 0px; 
-	bottom: 0px; 
-	right: 0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+}
+
+div.fill{
+    height: 100%;
+    width: 100%;
+
+}
+
+
+#main_tabs { /* tabstrip element */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+}
+
+#main_tabs div{
+    height: 100%;
+    width: 100%;
+}
+.k-tabstrip .k-content {
+    position: absolute;
+    top: 41px;
+    bottom: 0;
+    width: auto;
+    height: auto;
 }
