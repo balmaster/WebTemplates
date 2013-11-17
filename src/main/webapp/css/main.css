@@ -1,7 +1,9 @@
 div.absolute {
-	position: absolute; 
-	top: 0px; 
-	left: 0px; 
-	bottom: 0px; 
-	right: 0px;
+	position: absolute;
+	/*top: 0px;*/
+	/*left: 0px;*/
+	/*bottom: 0px;*/
+	/*right: 0px;*/
+    height: 98%;
+    width: 98%;
 }
