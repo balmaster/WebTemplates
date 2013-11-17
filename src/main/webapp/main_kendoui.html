@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/kendoui/kendo.default.css"/>
+    <link rel="stylesheet" type="text/css" href="css/kendoui/kendo.common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <script type="text/javascript" src="js/lib/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/kendoui/kendo.web.js"></script>
+</head>
+<body>
+
+<!-- define a template for the layout -->
+<script id="layout-template" type="text/x-keno-template">
+    <h1>Muh Kittehz!</h1>
+    <div id="kitteh-list"></div>
+    <div id="kitteh"></div>
+    <p>Teh kittehs are the bestest! I want to hug them all!</p>
+</script>
+
+<!-- define templates for all the views -->
+
+<script id="kitteh-list-template" type="text/x-kendo-template">
+    <div data-role="listview" data-bind="source: imageSource" data-template="kitteh-list-item-template"></div>
+</script>
+
+<script id="kitteh-list-item-template" type="text/x-kendo-template">
+    <img data-bind="attr: {src: url}" height="100" width="150">
+</script>
+
+<script id="kitteh-view-template" type="text/x-keno-template">
+    <h3 data-bind="text: name"></h3>
+    <img data-bind="attr: {src: url}">
+</script>
+
+<!-- a div to place everything in to the page -->
+<div id="main"></div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // render a layout in to the "#main" element
+            var layout = new kendo.Layout("layout-template");
+            layout.render("#main");
+
+// render a list of kittehz in to the "#kitteh-list" element
+            var kittehSource = new kendo.data.DataSource({
+                data: [
+                    {id: 1, name: "Fuzzball", url: "http://placekitten.com/300/200"},
+                    {id: 2, name: "Kitteh", url: "http://placekitten.com/301/200"},
+                    {id: 3, name: "Nuther", url: "http://placekitten.com/300/201"},
+                    {id: 4, name: "Cutezee", url: "http://placekitten.com/301/201"}
+                ],
+
+                schema: {
+                    model: { id: "id", fields: { url: "string" } }
+                }
+            });
+
+            var kittehModel = kendo.observable({
+                imageSource: kittehSource
+            });
+
+            var kittehListView = new kendo.View("#kitteh-list-template", {
+                model: kittehModel
+            });
+            layout.showIn("#kitteh-list", kittehListView);
+
+// render a single kitteh view in to the "#kitteh" element
+            var kitteh = kendo.observable({
+                name: "Fuzzball",
+                url: "http://placekitten.com/300/200"
+            });
+
+            var kittehView = new kendo.Layout("kitteh-view-template", {
+                model: kitteh
+            });
+            layout.showIn("#kitteh", kittehView);
+        });
+    </script>
+
+</body>
+</html>
