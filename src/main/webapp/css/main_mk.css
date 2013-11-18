@@ -1,9 +1,13 @@
+body{
+    overflow: hidden;
+}
 div.absolute {
     position: absolute;
     top: 0px;
     left: 0px;
     bottom: 0px;
     right: 0px;
+
 }
 
 div.fill{
@@ -45,16 +49,11 @@ div.fill{
 }
 
 #main1 .k-splitbar-static-vertical,
-#main1 .k-splitbar-static-horizontal,
-#main1 .k-splitter,
-#main1 .k-panelbar{
-    width: 0;
-    background: none;
-    height:0;
+#main1 .k-splitbar-static-horizontal
+{
+    display: none;
 }
 
-#main1 .k-splitbar-static-vertical,
-#main1 .k-splitbar-static-horizontal,
 #main1 .k-splitter,
 #main1 .k-widget,
 #main1 .k-panelbar{
@@ -63,7 +62,6 @@ div.fill{
 
 .list_item{
     float: left;
-    /*position: relative;*/
 }
 .list_item p {
     visibility: hidden;
