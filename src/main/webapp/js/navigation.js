@@ -32,31 +32,20 @@ function initGeneralServicesList(){
     var category_panelbar = $("#category_sidebar").kendoPanelBar({
         expandMode: "single",
         dataSource: [
-            { text: "Интернет-магазины"},
-            { text: "Інтернет"},
-            { text: "Комунальні послуги"},
-            { text: "Интернет-магазины"},
-            { text: "Інтернет"},
-            { text: "Комунальні послуги"},
-            { text: "Мобільний зв`язок"},
-            { text: "Интернет-магазины"},
-            { text: "Інтернет"},
-            { text: "Комунальні послуги"},
-            { text: "Мобільний зв`язок"},
-            { text: "Интернет-магазины"},
-            { text: "Інтернет"},
-            { text: "Комунальні послуги"},
-            { text: "Мобільний зв`язок"},
-            { text: "Интернет-магазины"},
-            { text: "Інтернет"},
-            { text: "Комунальні послуги"},
-            { text: "Мобільний зв`язок"},
-            { text: "Интернет-магазины"},
-            { text: "Інтернет"},
-            { text: "Комунальні послуги"},
-            { text: "Мобільний зв`язок"},
-            { text: "Мобільний зв`язок"},
-            { text: "Телефонія"}
+            { text: "Category1"},
+            { text: "Category2"},
+            { text: "Category3"},
+            { text: "Category4"},
+            { text: "Category5"},
+            { text: "Category6"},
+            { text: "Category7"},
+            { text: "Category8"},
+            { text: "Category9"},
+            { text: "Category10"},
+            { text: "Category11"},
+            { text: "Category12"},
+            { text: "Category13"},
+            { text: "Category14"}
         ],
         select: function(e){
             initServicesList($(e.item).find("> .k-link").text());
@@ -89,7 +78,9 @@ function initServicesList(serviceName){
             { text:  serviceName + "3", imageUrl: "img/default_logo.png" },
             { text:  serviceName + "4", imageUrl: "img/default_logo.png" },
             { text:  serviceName + "5", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "6", imageUrl: "img/default_logo.png" }
+            { text:  serviceName + "6", imageUrl: "img/default_logo.png" },
+            { text: serviceName + "1", imageUrl: "img/default_logo.png" },
+            { text:  serviceName + "2", imageUrl: "img/default_logo.png" }
         ]
     });
 }
