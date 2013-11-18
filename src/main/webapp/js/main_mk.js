@@ -1,11 +1,16 @@
 $(document).ready(function() {
+
+
     $("#main").kendoSplitter({
         orientation: "vertical",
         panes: [
             { collapsible: false, size: "50px", resizable:false },
             { collapsible: false, contentUrl: "tmpl/navigation.html" },
             { collapsible: false, size: "200px" , resizable:false}
-        ]
+        ],
+        contentLoad:function(){
+            initNavigation();
+        }
     });
 
     $("#payer").kendoSplitter({
@@ -61,6 +66,7 @@ $(document).ready(function() {
         }
         ]
     });
+
 
 });
 
