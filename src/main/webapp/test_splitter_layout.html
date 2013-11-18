@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/kendoui/kendo.default.css"/>
+    <link rel="stylesheet" type="text/css" href="css/kendoui/kendo.common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <script type="text/javascript" src="js/lib/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/kendoui/kendo.web.js"></script>
+</head>
+<body>
+<div id="example" class="k-content">
+    <div id="vertical" class="absolute">
+        <div id="top-pane">
+            <div class="pane-content">
+                <h3>top</h3>
+                <p>Resizable only.</p>
+            </div>
+        </div>
+        <div id="middle-pane">
+            <div class="pane-content">
+                <h3>Outer splitter / middle pane</h3>
+                <p>Resizable only.</p>
+            </div>
+        </div>
+        <div id="bottom-pane">
+            <div class="pane-content">
+                <h3>Outer splitter / bottom pane</h3>
+                <p>Non-resizable and non-collapsible.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+<script>
+    $(document).ready(function() {
+        $("#vertical").kendoSplitter({
+            orientation: "vertical",
+            panes: [
+                { collapsible: false, size: "100px" },
+                { collapsible: false},
+                { collapsible: false, size: "100px" }
+            ]
+        });
+    });
+</script>
+
+</body>
+</html>
