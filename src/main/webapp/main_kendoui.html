@@ -11,13 +11,13 @@
 
 <!-- define a template for the layout -->
 <script id="main_layout_template" type="text/x-keno-template">
-    <div id="main_tabs">
+    <div id="main_tabs" class="absolute">
         <ul>
             <li class="k-state-active">Tab 1</li>
             <li>Tab 2</li>
         </ul>
-        <div ><div id="payments_tab" ></div></div>
-        <div ><div id="registries_tab" ></div></div>
+        <div class="fill"><div id="payments_tab" ></div></div>
+        <div class="fill"><div id="registries_tab" ></div></div>
     </div>
 </script>
 
@@ -40,9 +40,11 @@
             var main_tabs = $("#main_tabs").kendoTabStrip({
                 animation: {
                     open: {
+                        effects : "",
                         duration: 0
                     },
                     close: {
+                        effects : "",
                         duration: 0
                     }
                 }
