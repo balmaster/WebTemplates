@@ -30,7 +30,6 @@ function initNavigation() {
 
 function initGeneralServicesList(){
     var category_panelbar = $("#category_sidebar").kendoPanelBar({
-        expandMode: "single",
         dataSource: [
             { text: "Category1"},
             { text: "Category2"},
@@ -55,33 +54,32 @@ function initGeneralServicesList(){
 }
 
 function initServicesList(serviceName){
-//    $("#services").html(serviceName);
-    $("#services").kendoPanelBar({
-        dataSource: [
-            { text: serviceName + "1", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "2", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "3", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "4", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "5", imageUrl: "img/default_logo.png" },
-            { text: serviceName + "1", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "2", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "3", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "4", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "5", imageUrl: "img/default_logo.png" },
-            { text: serviceName + "1", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "2", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "3", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "4", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "5", imageUrl: "img/default_logo.png" },
-            { text: serviceName + "1", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "2", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "3", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "4", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "5", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "6", imageUrl: "img/default_logo.png" },
-            { text: serviceName + "1", imageUrl: "img/default_logo.png" },
-            { text:  serviceName + "2", imageUrl: "img/default_logo.png" }
-        ]
-    });
-}
+    $("#services").empty();
+    var dataSource = [];
+    for (var i = 0; i <=20; i++){
+        dataSource.push({
+            url: 'img/default_logo.png',
+            serviceName: serviceName + i
+        });
+    }
 
+    var serviceDataSource = new kendo.data.DataSource({data: dataSource});
+    $("#services").kendoListView({
+        dataSource: serviceDataSource,
+        template: kendo.template('<div class="list_item" style="width:100px; height:100px;"><center><img src="#= url #"/>' +
+                '<br/>#= serviceName #<p></p></center></div>')
+//            ,change: onChange()
+    });
+
+//    function onChange(){
+//        var data = serviceDataSource.view(),
+//            selected = $.map(this.select, function(item) {
+//                return data[$(item).index()].serviceName;
+//            });
+//
+//        alert("Selected: " + selected.length + " item(s), [" + selected.join(", ") + "]");
+//    }
+
+
+
+}
