@@ -24,10 +24,13 @@ function initNavigation() {
     });
 
     initGeneralServicesList();
+    $("#category_scroll").kendoSplitter({});
+    $("#services_scroll").kendoSplitter({});
 };
 
 function initGeneralServicesList(){
-    $("#category_sidebar").kendoPanelBar({
+    var category_panelbar = $("#category_sidebar").kendoPanelBar({
+        expandMode: "single",
         dataSource: [
             { text: "Интернет-магазины"},
             { text: "Інтернет"},
@@ -59,6 +62,7 @@ function initGeneralServicesList(){
             initServicesList($(e.item).find("> .k-link").text());
         }
     });
+    $(".panelBar-content").kendoMobileScroller();
 }
 
 function initServicesList(serviceName){
