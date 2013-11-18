@@ -64,22 +64,15 @@ function initServicesList(serviceName){
     }
 
     var serviceDataSource = new kendo.data.DataSource({data: dataSource});
-    $("#services").kendoListView({
+    var servicesList = $("#services").kendoListView({
         dataSource: serviceDataSource,
         template: kendo.template('<div class="list_item" style="width:100px; height:100px;"><center><img src="#= url #"/>' +
-                '<br/>#= serviceName #<p></p></center></div>')
-//            ,change: onChange()
+                '<br/>#= serviceName #</center></div>'),
+        selectable: true
     });
 
-//    function onChange(){
-//        var data = serviceDataSource.view(),
-//            selected = $.map(this.select, function(item) {
-//                return data[$(item).index()].serviceName;
-//            });
-//
-//        alert("Selected: " + selected.length + " item(s), [" + selected.join(", ") + "]");
-//    }
-
-
+//    $("#services .list_item").bind("click", function(e){
+//        alert($(e.target).html());
+//    })
 
 }
