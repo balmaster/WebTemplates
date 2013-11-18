@@ -1,14 +1,4 @@
-body{
-    overflow: hidden;
-}
-div.absolute {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
-
-}
+@import "common.css";
 
 div.fill{
     height: 100%;
