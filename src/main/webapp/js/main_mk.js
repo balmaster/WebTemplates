@@ -1,10 +1,8 @@
 $(document).ready(function() {
-
-
     $("#main1").kendoSplitter({
         orientation: "vertical",
         panes: [
-            { collapsible: false, size: "50px", resizable:false },
+            { collapsible: false, size: "100px", resizable:false },
             { collapsible: false, contentUrl: "tmpl/navigation.html" },
             { collapsible: false, size: "200px" , resizable:false}
         ],
