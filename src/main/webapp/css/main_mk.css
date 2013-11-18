@@ -5,39 +5,6 @@ div.fill{
     width: 100%;
 }
 
-#services li{
-    padding: 0;
-    margin: 0;
-}
-#services .k-item {
-    float: left;
-    height: 100px;
-    width: 100px;
-    text-align: center;
-    font-size: 13px;
-    padding: 0;
-    margin: 0;
-}
-#services .k-panelbar{
-    float: none;
-}
-#services .k-image{
-    display: block;
-}
-#services span {
-    height:100%;
-    width: 100%;
-    line-height: 20px;
-}
-#main_tabs div{
-    height: 100%;
-    width: 100%;
-}
-
-#services span{
-    padding: 0;
-}
-
 #main1 .k-splitbar-static-vertical,
 #main1 .k-splitbar-static-horizontal
 {
@@ -53,13 +20,7 @@ div.fill{
 .list_item{
     float: left;
 }
-.list_item p {
-    visibility: hidden;
-}
 .list_item:hover{
     cursor: hand;
     background-color: lightgray;
-}
-.list_item:hover {
-    cursor: hand;
 }
