@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-    $("#main").kendoSplitter({
+    $("#main1").kendoSplitter({
         orientation: "vertical",
         panes: [
             { collapsible: false, size: "50px", resizable:false },

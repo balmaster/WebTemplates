@@ -4,7 +4,11 @@ div.absolute {
     left: 0px;
     bottom: 0px;
     right: 0px;
-    height: 99.6%;
+}
+
+div.fill{
+    height: 100%;
+    width: 100%;
 }
 
 #services li{
