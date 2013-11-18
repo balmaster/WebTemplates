@@ -9,7 +9,6 @@ div.absolute {
 div.fill{
     height: 100%;
     width: 100%;
-
 }
 
 #services li{
@@ -35,38 +34,6 @@ div.fill{
     height:100%;
     width: 100%;
     line-height: 20px;
-}
-
-#main_tabs { /* tabstrip element */
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: auto;
-    height: auto;
-}
-
-#main_tabs div{
-    height: 100%;
-    width: 100%;
-}
-.k-tabstrip .k-content {
-    position: absolute;
-    top: 41px;
-    bottom: 0;
-    width: auto;
-    height: auto;
-}
-
-.k-splitter .k-splitbar-static-vertical,
-.k-splitter .k-splitbar-static-horizontal,
-.k-splitter,
-.k-panelbar{
-    width: 0;
-    border-width: 0;
-    background: none;
-    height:0;
 }
 
 
