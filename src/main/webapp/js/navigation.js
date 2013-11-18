@@ -63,12 +63,16 @@ function initServicesList(serviceName){
         });
     }
 
+//    var change = function(){
+//        alert('2');
+//    }
     var serviceDataSource = new kendo.data.DataSource({data: dataSource});
     var servicesList = $("#services").kendoListView({
         dataSource: serviceDataSource,
         template: kendo.template('<div class="list_item" style="width:100px; height:100px;"><center><img src="#= url #"/>' +
                 '<br/>#= serviceName #</center></div>'),
-        selectable: true
+        selectable: true,
+//        change: change
     });
 
 //    $("#services .list_item").bind("click", function(e){
