@@ -38,15 +38,15 @@ $(document).ready(function() {
         ]
     });
 
-    $("#accounts_table").kendoGrid({
+    $("#bottom_table").kendoGrid({
         dataSource: {
-            data: [ {account:"4000000000000", sum:152.35, currency:"грн."},
-                    {account:"4636540000000", sum:12456.58, currency:"грн."},
-                    {account:"4000004324637", sum:0.25, currency:"грн."}],
+            data: [ {id:"4000000000000", sum:152.35, currency:"грн."},
+                    {id:"4636540000000", sum:12456.58, currency:"грн."},
+                    {id:"4000004324637", sum:0.25, currency:"грн."}],
             schema: {
                 model: {
                     fields: {
-                        account: { type: "string" },
+                        id: { type: "string" },
                         sum: { type: "number" },
                         currency: { type: "string" }
                     }
@@ -56,13 +56,13 @@ $(document).ready(function() {
         height: 130,
         columns: [ {
             field: "account",
-            title: "Номер счета"
+            title: "id"
         } , {
             field: "sum",
-            title: "Остаток"
+            title: "sum"
         } , {
             field: "currency",
-            title: "Валюта"
+            title: "currency"
         }
         ]
     });

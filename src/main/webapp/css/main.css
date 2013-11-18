@@ -31,5 +31,24 @@ div.absolute {
     width: 100%;
     line-height: 20px;
 }
+#main_tabs div{
+    height: 100%;
+    width: 100%;
+}
+.k-tabstrip .k-content {
+    position: absolute;
+    top: 41px;
+    bottom: 0;
+    width: auto;
+    height: auto;
+}
 
-
+.k-splitter .k-splitbar-static-vertical,
+.k-splitter .k-splitbar-static-horizontal,
+.k-splitter,
+.k-panelbar{
+    width: 0;
+    border-width: 0;
+    background: none;
+    height:0;
+}
