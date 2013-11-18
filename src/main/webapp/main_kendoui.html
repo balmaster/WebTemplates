@@ -30,7 +30,7 @@
 </script>
 
 <!-- a div to place everything in to the page -->
-<div id="main" class="absolute k-content"></div>
+<div id="main" class="absolute"></div>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -38,19 +38,20 @@
             layout.render("#main");
 
             var main_tabs = $("#main_tabs").kendoTabStrip({
+                animation: {
+                    open: {
+                        duration: 0
+                    },
+                    close: {
+                        duration: 0
+                    }
+                }
             });
 
-//            var payments_view = new kendo.View("payments_tab_template", {
-//            });
             var layout = new kendo.Layout("payments_tab_template");
             layout.render("#payments_tab");
             var layout = new kendo.Layout("registries_tab_template");
             layout.render("#registries_tab");
-//            layout.showIn("#payments_tab", payments_view);
-//            var registries_view = new kendo.View("registries_tab_template", {
-//            });
-//            layout.showIn("#registries_tab", registries_view);
-
         });
     </script>
 
