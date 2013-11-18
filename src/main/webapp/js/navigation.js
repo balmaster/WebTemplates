@@ -71,7 +71,7 @@ function initServicesList(serviceName){
         dataSource: serviceDataSource,
         template: kendo.template('<div class="list_item" style="width:100px; height:100px;"><center><img src="#= url #"/>' +
                 '<br/>#= serviceName #</center></div>'),
-        selectable: true,
+        selectable: true
 //        change: change
     });
 
