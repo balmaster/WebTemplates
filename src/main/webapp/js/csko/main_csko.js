@@ -39,7 +39,10 @@ $(document).ready(function() {
                 duration: 0
             }
         },
-        activate: resizeActiveTab
+        activate: resizeActiveTab,
+        contentLoad : function(e) {
+            initPaymentsTab(e);
+        }
     });
 
 
