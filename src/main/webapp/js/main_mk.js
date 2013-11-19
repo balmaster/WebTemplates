@@ -2,15 +2,16 @@ $(document).ready(function() {
     $("#main1").kendoSplitter({
         orientation: "vertical",
         panes: [
-            { collapsible: false, size: "100px", resizable:false },
-            { collapsible: false, contentUrl: "tmpl/navigation.html" },
+            { collapsible: false, size: "60px", resizable:false },
+            { collapsible: false},//, contentUrl: "tmpl/navigation.html" },
             { collapsible: false, size: "200px" , resizable:false}
-        ],
-        contentLoad:function(){
-            initNavigation();
-        }
+        ]
+//        ,
+//        contentLoad:function(){
+//            initNavigation();
+//        }
     });
-
+    initPayment([{ url: 'img/default_logo.png', serviceName: 'name'}]);
     $("#payer").kendoSplitter({
         orientation: "horizontal",
         panes: [
