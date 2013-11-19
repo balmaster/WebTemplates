@@ -16,3 +16,16 @@ div.form_grid_splitter div.k-splitbar-static-vertical
 div.container div.form_grid_splitter {
     border : 0;
 }
+
+div.container .forms {
+    float: left;
+}
+
+div.container .forms li {
+    margin-bottom: 5px;
+    list-style: none;
+}
+
+div.container .forms li > * {
+    width: 200px;
+}

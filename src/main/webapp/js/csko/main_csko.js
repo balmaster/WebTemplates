@@ -41,7 +41,7 @@ $(document).ready(function() {
         },
         activate: resizeActiveTab,
         contentLoad : function(e) {
-            initPaymentsTab(e);
+            initTab(e);
         }
     });
 
