@@ -6,9 +6,13 @@ div.container {
     overflow: hidden;
 }
 
-#main_splitter > .k-splitbar-static-vertical,
-#main_splitter > .k-splitbar-static-horizontal
+#main_splitter div.k-splitbar-static-vertical,
+#main_splitter div.k-splitbar-static-horizontal,
+div.form_grid_splitter div.k-splitbar-static-vertical
 {
     display: none;
 }
 
+div.container div.form_grid_splitter {
+    border : 0;
+}
