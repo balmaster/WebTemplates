@@ -27,6 +27,10 @@ function initTab(e) {
             },
             groupable: true,
             sortable: true,
+            selectable: "multiple row",
+            navigatable: true,
+            filterable: true,
+            columnMenu: true,
             pageable: {
                 refresh: true,
                 pageSizes: true
