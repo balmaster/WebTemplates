@@ -1,4 +1,9 @@
 function initNavigation() {
+    $("#center_layout").load("tmpl/navigation.html",
+        function(){
+            loadNavigationContent();
+        });
+function loadNavigationContent(){
     $("#center_layout").kendoSplitter({
         orientation: "vertical",
         panes: [
@@ -27,10 +32,11 @@ function initNavigation() {
     $("#category_scroll").kendoSplitter({});
     $("#services_scroll").kendoSplitter({});
 };
-
+}
 function initGeneralServicesList(){
     var category_panelbar = $("#category_sidebar").kendoPanelBar({
         dataSource: [
+
             { text: "Category1"},
             { text: "Category2"},
             { text: "Category3"},

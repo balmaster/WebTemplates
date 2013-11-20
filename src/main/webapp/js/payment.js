@@ -58,7 +58,8 @@ function initPayment(data) {
             format:"######.##"
         });
         $("#attrsForm input[type=money]").kendoNumericTextBox({
-            format: "#.00 грн"
+            format: "#.00 грн",
+            min: 0
         });
         $("#attrsForm input[type=date]").kendoDatePicker();
 
@@ -76,12 +77,20 @@ function initPayment(data) {
             dataSource: [{'id':'id1', 'text': 'mean1'}, {'id':'id2', 'text': 'mean2'}]
         });
         $("#CART").kendoComboBox({
-//            dataTextField: "ContactName",
-            dataTextField: "id",
             dataValueField: "id",
+            dataTextField: "id",
             template: '#= id# (#= sum# #= currency#)',
-//            template: '${id}',
             dataSource: carts
+        });
+        $("#MEAN").bind('change', function(){
+            if ($("#MEAN").val() == 'id1'){
+                $("#CART").closest('div').show();
+            }else{
+                $("#CART").closest('div').hide();
+            }
+        });
+        $("#cancel_button").bind('click', function(){
+            initNavigation();
         });
     }
 };
