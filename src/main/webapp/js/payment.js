@@ -63,6 +63,21 @@ function initPayment(data) {
         $("#attrsForm input[type=date]").kendoDatePicker();
 
         $("#attrsForm input[type=time]").kendoDateTimePicker();
+
+        $("#account_ext_attr_toggle_button").bind('click', function(){
+               $("#account_ext_attr_content").toggle();
+        });
+        $("#account_attr_toggle_button").bind('click', function(){
+            $("#account_attr_content").toggle();
+        });
+        $("#CART").kendoComboBox({
+//            dataTextField: "ContactName",
+            dataTextField: "id",
+            dataValueField: "id",
+            template: '#= id# (#= sum# #= currency#)',
+//            template: '${id}',
+            dataSource: carts
+        });
     }
 };
 

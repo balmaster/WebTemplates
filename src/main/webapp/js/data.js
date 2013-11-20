@@ -1,3 +1,7 @@
+var carts =   [ {id:"4000000000000", sum:152.35, currency:"грн."},
+        {id:"4636540000000", sum:12456.58, currency:"грн."},
+        {id:"4000004324637", sum:0.25, currency:"грн."}];
+
 var items= [
             {
                 "attributeId":6607,

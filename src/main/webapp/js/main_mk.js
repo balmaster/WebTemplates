@@ -38,17 +38,13 @@ $(document).ready(function() {
     });
 
     $("#bottom_table").kendoGrid({
-        dataSource: {
-            data: [ {id:"4000000000000", sum:152.35, currency:"грн."},
-                    {id:"4636540000000", sum:12456.58, currency:"грн."},
-                    {id:"4000004324637", sum:0.25, currency:"грн."}],
-            schema: {
-                model: {
-                    fields: {
-                        id: { type: "string" },
-                        sum: { type: "number" },
-                        currency: { type: "string" }
-                    }
+        dataSource: carts,
+        schema: {
+            model: {
+                fields: {
+                    id: { type: "string" },
+                    sum: { type: "number" },
+                    currency: { type: "string" }
                 }
             }
         },

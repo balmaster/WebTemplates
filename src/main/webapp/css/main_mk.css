@@ -57,3 +57,20 @@
 .hiddenAttr{
     display:none;
 }
+
+#attrsForm label{
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+    padding-right: 5px;
+    color: #000;
+}
+
+#attrsForm span.k-widget,
+#attrsForm .k-textbox{
+    width: 300px;
+}
+#attrsForm .k-button{
+    width:150px;
+    height: 35px;
+}
