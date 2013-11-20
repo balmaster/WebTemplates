@@ -70,6 +70,11 @@ function initPayment(data) {
         $("#account_attr_toggle_button").bind('click', function(){
             $("#account_attr_content").toggle();
         });
+        $("#MEAN").kendoComboBox({
+            dataTextField: "text",
+            dataValueField: "id",
+            dataSource: [{'id':'id1', 'text': 'mean1'}, {'id':'id2', 'text': 'mean2'}]
+        });
         $("#CART").kendoComboBox({
 //            dataTextField: "ContactName",
             dataTextField: "id",
